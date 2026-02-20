@@ -1,11 +1,17 @@
-/* ===== Global Reset ===== */
+/* ============================= */
+/* ===== GLOBAL RESET ========== */
+/* ============================= */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ===== Base Styles ===== */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   background-color: #ffffff;
@@ -13,68 +19,94 @@ body {
   line-height: 1.6;
 }
 
-/* ===== Layout Container ===== */
+/* ============================= */
+/* ===== LAYOUT ================ */
+/* ============================= */
+
 .container {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* ===== Navigation ===== */
-nav {
-  padding: 20px 0;
+section {
+  padding: 100px 0;
   border-bottom: 1px solid #eeeeee;
 }
 
+/* ============================= */
+/* ===== NAVIGATION ============ */
+/* ============================= */
+
+nav {
+  padding: 25px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 20px;
+}
+
 nav a {
-  margin-right: 25px;
+  margin-left: 30px;
   text-decoration: none;
   color: #111111;
   font-weight: 600;
   font-size: 16px;
+  transition: 0.2s ease;
 }
 
 nav a:hover {
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
-/* ===== Header / Hero ===== */
+/* ============================= */
+/* ===== HERO SECTION ========== */
+/* ============================= */
+
 header {
-  padding: 120px 0;
-  text-align: left;
+  padding: 140px 0;
+}
+
+.hero-content {
+  max-width: 750px;
 }
 
 h1 {
-  font-size: 48px;
+  font-size: 52px;
   font-weight: 700;
-  margin-bottom: 20px;
-  line-height: 1.2;
+  line-height: 1.15;
+  margin-bottom: 25px;
 }
 
 h2 {
   font-size: 32px;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 p {
   font-size: 18px;
-  margin-bottom: 20px;
-  max-width: 650px;
+  margin-bottom: 25px;
+  color: #333333;
 }
 
-/* ===== Sections ===== */
-section {
-  padding: 80px 0;
-  border-bottom: 1px solid #eeeeee;
-}
+/* ============================= */
+/* ===== BUTTONS =============== */
+/* ============================= */
 
-/* ===== Buttons ===== */
 .btn {
   display: inline-block;
   background-color: #2563eb;
   color: #ffffff;
-  padding: 14px 28px;
+  padding: 15px 30px;
   border-radius: 8px;
   font-size: 16px;
   font-weight: 600;
@@ -84,70 +116,201 @@ section {
 
 .btn:hover {
   opacity: 0.9;
+  transform: translateY(-1px);
 }
 
-/* ===== Lists ===== */
-ul {
-  padding-left: 20px;
-  margin-bottom: 20px;
+/* Secondary button */
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid #2563eb;
+  color: #2563eb;
 }
 
-li {
-  margin-bottom: 10px;
-  font-size: 17px;
+.btn-secondary:hover {
+  background-color: #2563eb;
+  color: #ffffff;
 }
 
-/* ===== Forms ===== */
+/* ============================= */
+/* ===== FEATURES SECTION ====== */
+/* ============================= */
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.feature-box h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.feature-box p {
+  font-size: 16px;
+  color: #444444;
+}
+
+/* ============================= */
+/* ===== PORTFOLIO ============= */
+/* ============================= */
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.portfolio-item {
+  border: 1px solid #eeeeee;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.2s ease;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-4px);
+}
+
+.portfolio-item img {
+  width: 100%;
+  display: block;
+}
+
+.portfolio-content {
+  padding: 20px;
+}
+
+/* ============================= */
+/* ===== PRICING =============== */
+/* ============================= */
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.pricing-card {
+  border: 1px solid #eeeeee;
+  padding: 40px 30px;
+  border-radius: 12px;
+  text-align: center;
+  transition: 0.2s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+}
+
+.price {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 20px 0;
+}
+
+/* ============================= */
+/* ===== CONTACT FORM ========== */
+/* ============================= */
+
 form {
   max-width: 600px;
+  margin-top: 40px;
 }
 
 input,
 textarea {
   width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
+  padding: 14px;
+  margin-bottom: 18px;
   border: 1px solid #dddddd;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 16px;
+  font-family: 'Inter', sans-serif;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
 }
 
 button {
   background-color: #2563eb;
-  color: white;
+  color: #ffffff;
   padding: 14px 28px;
   border: none;
   border-radius: 8px;
   font-weight: 600;
+  font-size: 16px;
   cursor: pointer;
   transition: 0.2s ease;
 }
 
 button:hover {
   opacity: 0.9;
+  transform: translateY(-1px);
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
+/* ============================= */
+/* ===== FOOTER ================ */
+/* ============================= */
+
+footer {
+  padding: 40px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #777777;
+}
+
+/* ============================= */
+/* ===== RESPONSIVE ============ */
+/* ============================= */
+
+@media (max-width: 992px) {
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
 
   header {
-    padding: 80px 0;
+    padding: 100px 0;
   }
 
   h1 {
-    font-size: 36px;
+    font-size: 40px;
   }
 
   h2 {
     font-size: 26px;
   }
 
+}
+
+@media (max-width: 600px) {
+
+  nav a {
+    margin-left: 15px;
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+
   p {
     font-size: 16px;
   }
 
-  nav a {
-    display: block;
-    margin-bottom: 10px;
-  }
 }
